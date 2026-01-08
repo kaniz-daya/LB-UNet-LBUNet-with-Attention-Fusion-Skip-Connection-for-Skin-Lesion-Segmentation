@@ -70,7 +70,6 @@ Batch Size: 8
 
 Epochs: 300
 
-Predictions are clamped to avoid numerical instability.
 
 📈 Evaluation Metrics
 
@@ -83,9 +82,12 @@ Pixel Accuracy
 Sensitivity & Specificity
 
 🏆 Results Summary
-Model	Val mIoU	Val DSC	Test mIoU	Test DSC
-Original LB-UNet	0.7922	0.8731	0.8111	0.8899
-Modified LB-UNet (ASF)	0.7884	0.8706	0.8043	0.8824
+Model	             Val mIoU	  Val DSC	  Test mIoU	  Test DSC
+
+Original LB-UNet	  0.7922	   0.8731	   0.8111	     0.8899
+
+Modified LB-UNet  	0.7884	   0.8706	   0.8043	     0.8824
+
 ⏱️ Efficiency
 
 Inference speed improved by ~40%
@@ -101,34 +103,6 @@ Removal of deep supervision causes slight performance degradation
 ASF alone cannot fully replace boundary-aware auxiliary learning
 
 Strong candidate for real-time or resource-constrained deployment
-
-📂 Recommended Repository Structure
-lb-unet-attention/
-│
-├── data/
-│   ├── train/
-│   ├── val/
-│   ├── test/
-│
-├── models/
-│   ├── lbunet.py
-│   ├── attention_skip_fusion.py
-│
-├── training/
-│   ├── train.py
-│   ├── loss.py
-│
-├── results/
-│   ├── metrics.csv
-│   ├── predictions/
-│
-├── README.md
-└── requirements.txt
-
-🧾 Resume-Ready Description
-
-Skin Lesion Segmentation Using Attention-Based LB-UNet
-Designed and evaluated a lightweight modification of LB-UNet by introducing learnable attention-based skip connections. Achieved ~40% faster inference on ISIC 2018 dataset with minimal reduction in segmentation accuracy (mIoU 0.804). Implemented in PyTorch with BCE–Dice loss and extensive ablation studies.
 
 🧪 Technologies Used
 
